@@ -1,0 +1,14 @@
+## .NET
+bin/
+obj/
+*.user
+
+## Large/sensitive artifacts — kept locally, not tracked
+*.bak
+*.trc
+*.xel
+*.ldf
+*.mdf
+
+## IDE
+.vs/
