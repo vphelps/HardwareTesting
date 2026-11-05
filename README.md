@@ -32,10 +32,13 @@ Moved here from an earlier CLI session. Project context so far:
 
 ## Still open (unanswered from the original session)
 
-1. No real workload trace captured yet — `CaptureWorkload.sql` needs to be run
-   against a live Advantage install and the resulting `.xel` dropped in this repo
-   so `src/HardwareTesting.StressTest/queries/` can be filled in with real queries
-   instead of the current placeholder.
+1. `manager-console-startup-sql.md` (code-derived, unverified) gave two real, literal
+   queries now seeded in `queries/` — a one-time version check and app-info lookup.
+   That only covers Manager Console **startup**, not the repeated, concurrent
+   operations that actually drive load: POS sales, ticket check-in/out, end-of-day,
+   reports. A live trace (`CaptureWorkload.sql`, run against a live Advantage install,
+   `.xel` dropped in this repo) is still needed for those — or the same
+   code-derived-SQL approach applied to those code paths instead of a live trace.
 2. Pass/fail targets (e.g. POS transaction < 1s, reports < 10s at p95) are not defined.
 3. Exact CPU models for the test matrix are not defined.
 4. Whether the tool should also exercise the Advantage services (ports 15050-15060,
